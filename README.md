@@ -1,6 +1,6 @@
 # Deploying HAProxy based High Available Active-Active LB on Oracle Cloud Infrastructure Using a Terraform
 
-This Terraform module allow you to setup HAProxy based Load Balancer on OCI. The load balancer works in Active-Active mode. You can fully customize the load balancing configuration. For example, you can modify the SSL ciphers and protocol supported as required by your application, you can set up session persistence which is driven by the load balancer rather than application cookie based one and add any customization you like to have on the HAProxy load balancer.
+This Terraform module allows you to setup HAProxy based Load Balancer on OCI. The load balancer works in Active-Active mode. You can fully customize the load balancing configuration. For example, you can modify the SSL ciphers and protocol supported as required by your application, you can set up session persistence which is driven by the load balancer rather than application cookie based one and add any customization you like to have on the HAProxy load balancer.
 
 ## Architecture Overview
 ![High Available Active-Active HAProxy LB Architecture](./images/Architecture.png)
