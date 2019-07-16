@@ -55,22 +55,6 @@ variable "InstanceOS" {
   default     = "Oracle Linux"
 }
 
-variable "linux_os_version" {
-  description = "Operating system version for compute instances except NAT"
-  default     = "7.2"
-}
-
-/* variable "compute_assign_public_ip" {
-  description = "Whether the VNIC should be assigned a public IP address. "
-  default     = true
-} 
-
-variable "instance_count" {
-  description = "Number of COmpute instances"
-  default     = 2
-}
-*/
-
 variable "lb_instance_count" {
   description = "Number of HAP LB nodes"
   default     = 2

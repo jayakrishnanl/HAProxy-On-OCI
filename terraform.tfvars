@@ -16,9 +16,6 @@ vcn_dns_label = ""
 # Display name for VCN
 vcn_display_name = ""
 
-# Operating system version to be used for application instances
-linux_os_version = ""
-
 # Timezone of compute instance
 timezone = "GMT"
 

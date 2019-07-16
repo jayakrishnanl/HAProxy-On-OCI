@@ -43,19 +43,6 @@ data "oci_identity_regions" "home-region" {
   }
 }
 
-# Get latest Oracle Linux image
-data "oci_core_images" "InstanceImageOCID" {
-  compartment_id           = "${var.tenancy_ocid}"
-  operating_system         = "${var.InstanceOS}"
-  operating_system_version = "${var.linux_os_version}"
-
-  filter {
-    name   = "display_name"
-    values = ["^.*Oracle[^G]*$"]
-    regex  = true
-  }
-}
-
 # Get services supported by Service Gateway in the Region
 data "oci_core_services" "svcgtw_services" {
   filter {
