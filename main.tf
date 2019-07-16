@@ -2,7 +2,6 @@ locals {
   // VCN is /16
   lb_subnet_prefix      = "${cidrsubnet("${var.vcn_cidr}", 6, 0)}"
   web_subnet_prefix     = "${cidrsubnet("${var.vcn_cidr}", 6, 1)}"
-  bastion_subnet_prefix = "${cidrsubnet("${var.vcn_cidr}", 6, 2)}"
 }
 
 module "iam_dynamic_group" {
