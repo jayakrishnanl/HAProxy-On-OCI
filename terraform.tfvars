@@ -1,23 +1,23 @@
 # Compartment name
-compartment_name = "JayL"
+compartment_name = ""
 
 # Region
-region = "eu-frankfurt-1"
+region = ""
 
 # AD (Availability Domain to use for creating infrastructure) 
 AD = ["1","2"]
 
 # CIDR block of VCN to be created
-vcn_cidr =  "10.0.0.0/16"
+vcn_cidr =  ""
 
 # DNS label of VCN to be created
-vcn_dns_label = "hap"
+vcn_dns_label = ""
 
 # Display name for VCN
-vcn_display_name = "hapvcn"
+vcn_display_name = ""
 
 # Operating system version to be used for application instances
-linux_os_version = "7.2"
+linux_os_version = ""
 
 # Timezone of compute instance
 timezone = "GMT"
@@ -29,7 +29,7 @@ compute_boot_volume_size_in_gb = "50"
 compute_instance_user = "opc"
 
 # Hostname prefix to define name of LB nodes
-lb_hostname_prefix = "lb"
+lb_hostname_prefix = ""
 
 # Number of HAProxy LB nodes to be created
 lb_instance_count = "2"
@@ -44,6 +44,6 @@ web_instance_count = "2"
 web_instance_shape = "VM.Standard2.1"
 
 # Hostname prefix for Web Tier nodes
-web_hostname_prefix = "web"
+web_hostname_prefix = ""
 
 
