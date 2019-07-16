@@ -1,0 +1,10 @@
+[Unit]
+Description=Add the secondary VNIC at boot
+After=basic.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/secondary_vnic/secondary_vnic_all_configure.sh -c
+
+[Install]
+WantedBy=default.target
