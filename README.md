@@ -7,10 +7,10 @@ This Terraform module allows you to setup HAProxy based Load Balancer on OCI. Th
 
 The environment consists on 2 HAProxy nodes and 2 Web Server nodes. Both the HAProxy nodes are assigned a Reserved Public IP and an additional secondary Private IP. The Reserved Public IP is assigned to the Primary Private IP in normal working mode. In the event of an HAProxy node failure, the Public IP will failover to the secondary Private IP of the other HAProxy node using Keepalived. When the failed node recovers, the Public IP will return to its original instance. Please remember that the functional Load Balancer will handle request on both the Public IPs till the failed node comes back on-line and the IP failback happens to the original node.
 
-Keepalived is configured to use VRRP packets in uses couple of helper scripts to failover the Public IP. The helper scripts uses OCI CLI and instance profile based authrntication which is configured by IAM modules. Additional customization are also possible on keepalived service such as multiple health checks to ensure Keepalived correctly detect node/service failure, email notifications can be setup to alert you on a node/service failure.
+Keepalived is configured to use VRRP packets in uses couple of helper scripts to failover the Public IP. The helper scripts use OCI CLI and instance profile based authentication which is configured by IAM modules. Additional customization is also possible on keepalived service such as multiple health checks to ensure Keepalived correctly detect node/service failure, email notifications can be setup to alert you on a node/service failure.
 
 ## Prerequisites
-1. [Download and install Terraform](https://www.terraform.io/downloads.html) (v0.11.8 or later)
+1. [Download and install Terraform](https://www.terraform.io/downloads.html) (v0.11.8 or later v0.11.X versions)
 2. Export OCI credentials using guidance at [Export Credentials](https://www.terraform.io/docs/providers/oci/index.html).
 You must use an Admin User account to launch this terraform environment. You may update the credentials in env-vars.sh file and run it to set environment variables for this setup.
 3. The tenancy used for provisoning must have service limits increased to accomodate the build. 
@@ -114,25 +114,26 @@ web_hostname_prefix = "web"
 
 ### How to use this module
 
-1) Go to the directory with the cloned/downloaded terraform templates
+1) Download or clone the modules to your local machine and go to the module directory.
 
   ```
   cd HAProxy-On-OCI
   ```
 
-2) Update **env-vars.sh** with the required information. The file contains definitions of environment variables for your Oracle Cloud Infrastructure tenancy.
+2) Update **env-vars.sh** with the required information. This file defines environment variables with credentials for your Oracle Cloud Infrastructure tenancy.
 
 3) Update **terraform.tfvars** with the inputs for the architecture that you want to build. A working sample of this file is available in previous section and can be copied to launch an environment.
 
-4) Initialize Terraform. This will also download the latest terraform oci provider.
+4) Set environment variables by running **source env-vars.sh** on your UNIX system or by running **env-vars.ps1** on your Windows system.
+
+  ```
+  $ source env-vars.sh
+  ```
+
+5) Initialize Terraform. This will also download the latest terraform oci provider.
 
   ```
   $ terraform init
-  ```
-5) Set environment variables by running source **env-vars** on your UNIX system or by running **env-vars.ps1** on your Windows system.
-
-  ```
-  $ source env-vars
   ```
 
 6) Run terraform apply to create the infrastructure:
