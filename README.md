@@ -154,3 +154,5 @@ When all components have been created, Terraform displays a completion message. 
 
 When you’re prompted to confirm the action, enter **yes**.
 
+## Disclaimer
+This is my personal GitHub project, the ideas expressed here do not represent my employer's point of view... Likewise the exact opposite is also definitely true!
